@@ -76,7 +76,7 @@ if __name__ == '__main__':
     str1, str2 = strs
     l1 = len(str1)
     l2 = len(str2)
-    memo = [[-1 for _ in range(l2 + 1)] for _ in range(l1 + 1)]
+    memo = [[0 for _ in range(l2 + 1)] for _ in range(l1 + 1)]
     alignment = []
     time_assuming = time_wrapper()
     memory = process_memory()
