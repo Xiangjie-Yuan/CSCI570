@@ -31,8 +31,6 @@ def efficient(x, y):
     if len(x) == 1 or len(y) == 1:
         return base_case(x, y)
 
-    if len(x) < len(y):
-        x, y = y, x
     x_mid = len(x) // 2
     u_score = dp(x[:x_mid], y)
     d_score = dp(x[x_mid:][::-1], y[::-1])
