@@ -30,7 +30,7 @@ def dp():
     s2 = []
     row = l1
     col = l2
-    while row >= 0 and col >= 0:
+    while row > 0 or col > 0:
         if memo[row][col] == memo[row - 1][col] + DELTA:
             s1.append(str1[row - 1])
             s2.append("_")
@@ -74,6 +74,7 @@ if __name__ == '__main__':
             cur = line
     strs.append(cur)
     str1, str2 = strs
+
     l1 = len(str1)
     l2 = len(str2)
     memo = [[0 for _ in range(l2 + 1)] for _ in range(l1 + 1)]
@@ -81,6 +82,8 @@ if __name__ == '__main__':
     time_assuming = time_wrapper()
     memory = process_memory()
     min_alignment = memo[l1][l2]
+    # print(alignment, min_alignment)
+    # print(memo)
     with open(output_file_path, "w+") as f:
         f.writelines(str(min_alignment) + "\n")
         f.writelines(alignment[0] + "\n")
